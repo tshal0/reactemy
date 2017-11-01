@@ -2,10 +2,9 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RadioButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +53,7 @@ class Login extends Component {
             "password" : this.state.password
         }
 
-        axios.get(apiBaseURL + 'login', payload)
+        axios.post(apiBaseURL + 'login', payload)
         .then(function(response){
             console.log(response);
 
@@ -65,5 +64,5 @@ class Login extends Component {
 
 }
 
-const style={margin: 15,};
+const style={margin: 15};
 export default Login;
